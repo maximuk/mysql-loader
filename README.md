@@ -41,10 +41,10 @@ module.exports = {
 
 ### Load data from mysql to js file
 ``` javascript
-import data from './data.sql';
+import data from './data.mysql';
 ```
 
-### data.sql
+### data.mysql
 ``` sql
 select * from tablename
 ```
