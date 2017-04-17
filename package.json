@@ -1,0 +1,20 @@
+{
+  "name": "mysql-loader",
+  "version": "0.0.1",
+  "description": "Mysql loader for webpack",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maximuk/mysql-loader.git"
+  },
+  "author": "Sergey Maksimuk",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/maximuk/mysql-loader/issues"
+  },
+  "homepage": "https://github.com/maximuk/mysql-loader#readme",
+  "peerDependencies": {
+    "mysql": "^2.12.0"
+  }
+}
