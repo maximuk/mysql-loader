@@ -2,7 +2,8 @@ const fs = require('fs');
 const mysql = require('mysql');
 const path = require('path');
 
-const configPath = path.join(__dirname, '../../.mysql.config.json');
+const configPathJSON = path.join(__dirname, '../../.mysql.config.json');
+const configPathJS = path.join(__dirname, '../../.mysql.config.js');
 
 module.exports = function(source) {
   let config;
@@ -10,11 +11,14 @@ module.exports = function(source) {
 
   if (this.query) {
     config = this.query;
-  } else if (fs.existsSync(configPath)) {
-    this.addDependency(configPath);
-    config = require(configPath);
+  } else if (fs.existsSync(configPathJSON)) {
+    this.addDependency(configPathJSON);
+    config = require(configPathJSON);
+  } else if (fs.existsSync(configPathJS)) {
+    this.addDependency(configPathJS);
+    config = require(configPathJS);
   } else {
-    callback(new Error('Can not find a config. You should use `.mysql.config.json` file or fill query param in webpack config'));
+    callback(new Error('Can not find a config. You should use `.mysql.config.json` file or `.mysql.config.js` file or fill query param in webpack config'));
     return;
   }
 

@@ -37,6 +37,16 @@ module.exports = {
 }
 ```
 
+### `.mysql.config.js` file in work directory
+``` js
+module.exports = {
+  host: 'localhost',
+  user: 'root',
+  password: 'password',
+  database: 'dbname'
+};
+```
+
 ## Usage
 
 ### Load data from mysql to js file
